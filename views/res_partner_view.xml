@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="elim_view_partner_form" model="ir.ui.view">
+            <field name="name">elim.res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <page name="sales_purchases" position="after">
+                    <page name="Colegio" string="Colegio">
+                      <group>
+                        <field name="grado_id"/>
+                        <field name="seccion_id"/>
+                        <field name="ciclo_id"/>
+                        <field name="jornada_id"/>
+                        <field name="geducar_id"/>
+                      </group>
+                        <!-- <field name="colegio_historial">
+                            <tree string="Historial" editable="bottom">
+                                <field name="grado_id"/>
+                                <field name="seccion_id"/>
+                                <field name="ciclo_id"/>
+                                <field name="jornada_id"/>
+                            </tree>
+                        </field> -->
+                    </page>
+                </page>
+                <field name="function" position="after">
+                    <field name="genero"/>
+                    <field name="matricula"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

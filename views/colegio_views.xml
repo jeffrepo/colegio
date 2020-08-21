@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="colegio_menu_root"
+            name="Colegio"
+            sequence="8"/>
+
+        <menuitem id="configuracion_colegio_menu" name="Configuración"
+            parent="colegio_menu_root" sequence="1" />
+
+
+    <record id="action_colegio_grado_form" model="ir.actions.act_window">
+        <field name="name">Grado</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">colegio.grado</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" eval="False"/>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click para crear un nuevo grado.
+            </p>
+        </field>
+    </record>
+
+    <record id="action_colegio_seccion_form" model="ir.actions.act_window">
+        <field name="name">Sección</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">colegio.seccion</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" eval="False"/>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click para crear una nueva sección.
+            </p>
+        </field>
+    </record>
+
+    <record id="action_colegio_jornada_form" model="ir.actions.act_window">
+        <field name="name">Jornadas</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">colegio.jornada</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" eval="False"/>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click para crear una nueva jornada.
+            </p>
+        </field>
+    </record>
+
+    <record id="action_colegio_ciclo_form" model="ir.actions.act_window">
+        <field name="name">Ciclos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">colegio.ciclo</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" eval="False"/>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click para crear una nueva ciclo.
+            </p>
+        </field>
+    </record>
+
+        <menuitem id="configuracion_colegio_grado_menu" name="Grados"
+            parent="configuracion_colegio_menu"
+            action="action_colegio_grado_form" sequence="15"/>
+
+        <menuitem id="configuracion_colegio_seccion_menu" name="Secciones"
+            parent="configuracion_colegio_menu"
+            action="action_colegio_seccion_form" sequence="16"/>
+
+
+        <menuitem id="configuracion_colegio_jornada_menu" name="Jornadas"
+            parent="configuracion_colegio_menu"
+            action="action_colegio_jornada_form" sequence="17"/>
+
+
+        <menuitem id="configuracion_colegio_ciclo_menu" name="Ciclos"
+            parent="configuracion_colegio_menu"
+            action="action_colegio_ciclo_form" sequence="18"/>
+
+
+        <record id="view_colegio_grado_tree" model="ir.ui.view">
+            <field name="name">colegio.grado.tree</field>
+            <field name="model">colegio.grado</field>
+            <field name="arch" type="xml">
+                <tree string="Grados">
+                    <field name="nombre"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_colegio_grado_form" model="ir.ui.view">
+            <field name="name">colegio.grado.form</field>
+            <field name="model">colegio.grado</field>
+            <field name="arch" type="xml">
+                <form string="Grados">
+                    <sheet>
+                        <group>
+                            <field name="nombre"/>
+<!--                             <field name="seccion_id"/>
+                            <field name="jornada_id"/>
+                            <field name="ciclo_id"/> -->
+<!--                             <field name="seccion_ids"/> -->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_colegio_seccion_tree" model="ir.ui.view">
+            <field name="name">clegio.seccion.tree</field>
+            <field name="model">colegio.seccion</field>
+            <field name="arch" type="xml">
+                <tree string="Sección">
+                    <field name="nombre"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_colegio_seccion_form" model="ir.ui.view">
+            <field name="name">colegio.seccion.form</field>
+            <field name="model">colegio.seccion</field>
+            <field name="arch" type="xml">
+                <form string="Secciones">
+                    <sheet>
+                        <group>
+                            <field name="nombre"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_colegio_ciclo_tree" model="ir.ui.view">
+            <field name="name">colegio.ciclo.tree</field>
+            <field name="model">colegio.ciclo</field>
+            <field name="arch" type="xml">
+                <tree string="Ciclos">
+                    <field name="nombre"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_colegio_ciclo_form" model="ir.ui.view">
+            <field name="name">colegio.ciclo.form</field>
+            <field name="model">colegio.ciclo</field>
+            <field name="arch" type="xml">
+                <form string="Ciclos">
+                    <sheet>
+                        <group>
+                            <field name="nombre"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+<!--         <record id="view_colegio_seccion_line_form" model="ir.ui.view">
+            <field name="name">colegio.seccion.line.form</field>
+            <field name="model">colegio.seccion.line</field>
+            <field name="arch" type="xml">
+                <form string="Secciones">
+                    <sheet>
+                        <group>
+                            <field name="nombre"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record> -->
+
+        <record id="view_colegio_jornada_tree" model="ir.ui.view">
+            <field name="name">colegio.jornada.tree</field>
+            <field name="model">colegio.jornada</field>
+            <field name="arch" type="xml">
+                <tree string="Jornadas">
+                    <field name="nombre"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_colegio_jornada_form" model="ir.ui.view">
+            <field name="name">colegio.jornada.form</field>
+            <field name="model">colegio.jornada</field>
+            <field name="arch" type="xml">
+                <form string="Jornada">
+                    <sheet>
+                        <group>
+                            <field name="nombre"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>
