@@ -7,9 +7,9 @@
             <field name="model">account.invoice</field>
             <field name="inherit_id" ref="account.invoice_form"/>
             <field name="arch" type="xml">
-                <field name="date_invoice" position="attributes">
+                <!-- <field name="date_invoice" position="attributes">
                     <attribute name="string">Fecha de recibo</attribute>
-                </field>
+                </field> -->
                 <field name="date_due" position="attributes">
                     <attribute name="invisible">True</attribute>
                 </field>
